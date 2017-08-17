@@ -26,6 +26,7 @@
 	<properties>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<mybatis.version>3.2.7</mybatis.version>
+		<shiro.version>1.2.5</shiro.version>
 		<slf4j.version>1.7.7</slf4j.version>  
         <log4j.version>1.2.17</log4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -104,6 +105,45 @@
 			<version>1.0.9</version>
 		</dependency>
 		
+		<!-- shiro -->
+		<dependency>
+			<artifactId>quartz</artifactId>
+			<groupId>org.opensymphony.quartz</groupId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-all</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-quartz</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		
+		<!-- shiro 缓存 -->
+		<dependency>
+	    	<artifactId>ehcache-core</artifactId>
+	    	<groupId>net.sf.ehcache</groupId>
+	    	<version>2.5.0</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.apache.shiro</groupId>
+	    	<artifactId>shiro-ehcache</artifactId>
+	    	<version>${shiro.version}</version>
+	    </dependency>
+		
 		<!-- freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -118,6 +158,12 @@
 			<version>1.2.2</version>
 		</dependency>
 		
+		<!-- redis -->
+		<dependency>
+	    	<groupId>redis.clients</groupId>
+	    	<artifactId>jedis</artifactId>
+	    	<version>2.1.0</version>
+	    </dependency>
 		<!-- logo4j -->
 		<dependency>
 			<groupId>log4j</groupId>
