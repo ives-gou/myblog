@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-	<form action="">
+	<form id="loginForm">
 		<p>用户名：<input name="username" type="text" value="" /></p>
 		<p>密码：<input name="password" type="password" value="" /></p>
 		<p><input type="checkbox" name="rememberMe"></p>
-		<p><button type="submit">登录</button></p>
+		<p><button type="button" id="loginSubmit">登录</button></p>
 	</form>
+	
+	<script type="text/javascript">
+		$("#loginSubmit").click(function() {
+			$.post("/user/login", $("#loginForm").serialize(), function(result) {
+				if (result.status == 500) {
+					alert(result.message);
+				} else {
+					window.location = result.back_url;
+				}
+			}, "json");
+		});
+	</script>
 </body>
 </html>
